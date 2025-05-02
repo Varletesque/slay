@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            gap: 20px;
+        }
+        input {
+            padding: 10px;
+            border: 2px solid red;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid red;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+        button span {
+            color: red; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="groomName" placeholder="Enter your name">
+    <button onclick="redirectToContract()"><span> do it. </span></button>
+
+    <script>
+        function redirectToContract() {
+            const name = document.getElementById('groomName').value;
+            if (name.trim() !== '') {
+                window.location.href = `contract.html?name=${encodeURIComponent(name)}`;
+            } else {
+                alert('Butanga og pangalan, ipakapon taka krn.');
+            }
+        }
+    </script>
+</body>
+</html>

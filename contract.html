@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            font-family: serif;
+        }
+        .contract {
+            max-width: 600px;
+            padding: 30px;
+            border: 2px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="contract">
+        <h1>Marriage Contract</h1>
+        <p>This contract certifies that</p>
+        <h2 id="groomName"></h2>
+        <p>has willingly entered into marriage.</p>
+        <p>Signed on <span id="date"></span></p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        document.getElementById('groomName').textContent = name;
+        document.getElementById('date').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
